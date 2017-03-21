@@ -37,11 +37,12 @@ class JSONParser{
                 for tweetDictionary in rootObject{
                     if let tweet = Tweet(json: tweetDictionary){
                         tweets.append(tweet)
+                        print("Tweets successful")
                     }
                 }
                 
                 callback(true, tweets)
-            
+                
             }
             
         } catch {
