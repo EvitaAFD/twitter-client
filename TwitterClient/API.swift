@@ -82,12 +82,40 @@ class API {
         }
     }
     
-    private func updateTimeLine(callback: TweeetsCallback) {
+    private func updateTimeLine(callback: @escaping TweeetsCallback) {
         
         let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
         
-        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil)
-    
+        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil) {
+        
+            request.account = self.account
+            
+            request.perform(handler: { (data, response, error) in
+                if let error = error {
+                    print("Error, the error requesting user's home timeline: \(error.localizedDescription)")
+                callback(nil)
+                return
+                }
+                
+                guard let response = response else { callback(nil); return }
+                guard let data = data else { callback(nil); return }
+                
+                if response.statusCode >= 200 && response.statusCode < 300 {
+                    
+                    JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
+                        if success {
+                            callback(tweets)
+                        }
+                    })
+                    
+                }else{
+                    print("Error: response came back with status code: \(response.statusCode)")
+                    callback(nil)
+                    
+                }
+            })
+        }
+        
     }
     
     func getTweets(callback: TweeetsCallback) {
