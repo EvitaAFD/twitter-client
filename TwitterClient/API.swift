@@ -68,9 +68,10 @@ class API {
                 switch response.statusCode {
                     
                 case 200...299:
-                    //refactor into do, try, catch
-                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) {
-                    
+                    //refactor into do, try, catch and abstract into JSONParser
+                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                        let user = User(json: userJSON)
+                        callback(user)
                     }
                 default:
                     print("Error: response came back with status code: \(response.statusCode)")
@@ -82,6 +83,10 @@ class API {
     }
     
     private func updateTimeLine(callback: TweeetsCallback) {
+        
+        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+        
+        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil)
     
     }
     
