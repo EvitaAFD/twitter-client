@@ -17,6 +17,7 @@
 		5029B69E1E80540F00A4BCA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029B69D1E80540F00A4BCA0 /* User.swift */; };
 		5029B6A01E806D6400A4BCA0 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029B69F1E806D6400A4BCA0 /* JSONParser.swift */; };
 		5029B6A21E80781700A4BCA0 /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029B6A11E80781700A4BCA0 /* HomeTimelineViewController.swift */; };
+		5052155B1E819E9D001A74D9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052155A1E819E9D001A74D9 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5029B69D1E80540F00A4BCA0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = TwitterClient/User.swift; sourceTree = "<group>"; };
 		5029B69F1E806D6400A4BCA0 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		5029B6A11E80781700A4BCA0 /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTimelineViewController.swift; path = TwitterClient/HomeTimelineViewController.swift; sourceTree = "<group>"; };
+		5052155A1E819E9D001A74D9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				5027C5A31E808EDB00C9DB90 /* ListOfTweets.swift */,
 				5029B69D1E80540F00A4BCA0 /* User.swift */,
 				5029B69F1E806D6400A4BCA0 /* JSONParser.swift */,
+				5052155A1E819E9D001A74D9 /* API.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				5029B6881E803F5500A4BCA0 /* AppDelegate.swift in Sources */,
 				5027C5A41E808EDB00C9DB90 /* ListOfTweets.swift in Sources */,
 				5029B6A21E80781700A4BCA0 /* HomeTimelineViewController.swift in Sources */,
+				5052155B1E819E9D001A74D9 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
