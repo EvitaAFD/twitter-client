@@ -20,15 +20,14 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        JSONParser.tweetsFrom(data: JSONParser.sampleJSONData) { (success, tweets) in
-            
-            if(success){
-                guard let tweets = tweets else { fatalError("Tweets came back nil") }
-                for tweet in tweets{
-                    print(tweet.text)
-                    ListOfTweets.shared.add(tweet: tweet)
-                }
-                dataSource = ListOfTweets.shared.tweetContainer
+        updateTimeline()
+        
+    }
+    
+    func updateTimeline() {
+        API.shared.getTweets { (tweets) in
+            OperationQueue.main.addOperation {
+                self.dataSource = tweets ?? []
             }
             
         }

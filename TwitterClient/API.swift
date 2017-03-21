@@ -21,7 +21,7 @@ class API {
     
     var account : ACAccount?
     
-    private func loign(callback: @escaping AccountCallback) {
+    private func login(callback: @escaping AccountCallback) {
         
         let accountStore = ACAccountStore()
         
@@ -118,8 +118,24 @@ class API {
         
     }
     
-    func getTweets(callback: TweeetsCallback) {
+    func getTweets(callback: @escaping TweeetsCallback) {
+        
+        if self.account == nil {
+        
+            login(callback: { (account) in
+            if let account = account {
+                self.account = account
+                self.updateTimeLine(callback: { (tweets) in
+                    callback(tweets)
+                    })
+                }
+            })
+            
+        } else {
+            self.updateTimeLine(callback: callback)
+            }
+        }
     
     }
 
-}
+
