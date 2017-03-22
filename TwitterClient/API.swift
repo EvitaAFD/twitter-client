@@ -68,11 +68,9 @@ class API {
                 switch response.statusCode {
                     
                 case 200...299:
-                    //refactor into do, try, catch and abstract into JSONParser
-                    if let userJSON = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                        let user = User(json: userJSON)
+                        let user = JSONParser.getUser(data: data)
                         callback(user)
-                    }
+                    
                 default:
                     print("Error: response came back with status code: \(response.statusCode)")
                     callback(nil)
@@ -100,15 +98,20 @@ class API {
                 guard let response = response else { callback(nil); return }
                 guard let data = data else { callback(nil); return }
                 
-                if response.statusCode >= 200 && response.statusCode < 300 {
-                    
+                switch response.statusCode {
+                case 200...299:
                     JSONParser.tweetsFrom(data: data, callback: { (success, tweets) in
                         if success {
                             callback(tweets)
                         }
                     })
                     
-                }else{
+                case 400...499:
+                    print("Error is client side, error code is: \(response.statusCode)")
+                    
+                case 500...599:
+                    print("Error is server side, error code is: \(response.statusCode)")
+                default:
                     print("Error: response came back with status code: \(response.statusCode)")
                     callback(nil)
                     
@@ -138,4 +141,4 @@ class API {
     
     }
 
-
+ 

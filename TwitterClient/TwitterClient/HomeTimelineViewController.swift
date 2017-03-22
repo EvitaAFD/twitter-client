@@ -10,7 +10,12 @@ import UIKit
 
 class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var dataSource = [Tweet]()
+    var dataSource = [Tweet]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     
