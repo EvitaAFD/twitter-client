@@ -108,5 +108,69 @@
             </objects>
             <point key="canvasLocation" x="700" y="-112.89355322338831"/>
         </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="jJn-A3-fqp">
+            <objects>
+                <viewController id="YPF-Y6-8rF" customClass="UserDetailViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JXY-8J-DpP"/>
+                        <viewControllerLayoutGuide type="bottom" id="PVd-f6-iGi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xCm-pH-zQS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-9V-oaE">
+                                <rect key="frame" x="8" y="28" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKA-bR-hvx">
+                                <rect key="frame" x="8" y="57" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxb-hE-Y8C">
+                                <rect key="frame" x="8" y="86" width="351" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cax-Ua-925">
+                                <rect key="frame" x="8" y="115" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wYY-9V-oaE" firstAttribute="top" secondItem="JXY-8J-DpP" secondAttribute="bottom" constant="8" id="6V1-nG-7On"/>
+                            <constraint firstItem="oKA-bR-hvx" firstAttribute="leading" secondItem="xCm-pH-zQS" secondAttribute="leading" constant="8" id="9C3-dQ-Ucr"/>
+                            <constraint firstItem="Mxb-hE-Y8C" firstAttribute="leading" secondItem="xCm-pH-zQS" secondAttribute="leading" constant="8" id="EgQ-Ak-g1z"/>
+                            <constraint firstAttribute="trailing" secondItem="Mxb-hE-Y8C" secondAttribute="trailing" constant="8" id="H8B-ih-fXk"/>
+                            <constraint firstAttribute="trailing" secondItem="cax-Ua-925" secondAttribute="trailing" constant="8" id="KBo-w1-mPG"/>
+                            <constraint firstAttribute="trailing" secondItem="oKA-bR-hvx" secondAttribute="trailing" constant="8" id="Sla-lp-QWQ"/>
+                            <constraint firstItem="cax-Ua-925" firstAttribute="top" secondItem="Mxb-hE-Y8C" secondAttribute="bottom" constant="8" id="UJu-WT-cuL"/>
+                            <constraint firstAttribute="trailing" secondItem="wYY-9V-oaE" secondAttribute="trailing" constant="8" id="cmb-CJ-AfU"/>
+                            <constraint firstItem="wYY-9V-oaE" firstAttribute="leading" secondItem="xCm-pH-zQS" secondAttribute="leading" constant="8" id="fxg-00-Ufd"/>
+                            <constraint firstItem="cax-Ua-925" firstAttribute="leading" secondItem="xCm-pH-zQS" secondAttribute="leading" constant="8" id="pAg-Fo-mH7"/>
+                            <constraint firstItem="Mxb-hE-Y8C" firstAttribute="top" secondItem="oKA-bR-hvx" secondAttribute="bottom" constant="8" id="q8E-A8-pgC"/>
+                            <constraint firstItem="oKA-bR-hvx" firstAttribute="top" secondItem="wYY-9V-oaE" secondAttribute="bottom" constant="8" id="ujm-1Z-UJv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="screenName" destination="oKA-bR-hvx" id="8iJ-Qj-MEw"/>
+                        <outlet property="userDescription" destination="cax-Ua-925" id="iub-nT-jVv"/>
+                        <outlet property="userLocation" destination="Mxb-hE-Y8C" id="zXR-1b-mek"/>
+                        <outlet property="userName" destination="wYY-9V-oaE" id="Rq9-w9-0kS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GjE-eA-oAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="-625.63718140929541"/>
+        </scene>
     </scenes>
 </document>
