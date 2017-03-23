@@ -52,5 +52,17 @@ class JSONParser{
         
         
     }
+    class func getUser(data: Data) -> User? {
+        do {
+            if let userData = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                let user = User(json: userData)
+                return user
+            }
+        } catch {
+            print("Error serializing JSON")
+            }
+        return nil
+        }
+    }
     
-}
+
