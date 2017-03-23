@@ -8,33 +8,34 @@
 
 import Foundation
 
-class ListOfTweets {
+class Tweets {
     
-    static let shared = ListOfTweets()
+    static let shared = Tweets()
     
-    var tweetContainer = [Tweet]()
+    var allTweets = [Tweet]()
     
     private init(){}
     
-    func add(tweet: Tweet) {
-        self.tweetContainer.append(tweet)
+    func add(tweet: Tweet){
+        self.allTweets.append(tweet)
     }
     
-    func remove(tweet: Tweet) {
-        self.tweetContainer = self.tweetContainer.filter({ (item) -> Bool in
+    func remove(tweet: Tweet){
+        self.allTweets = self.allTweets.filter{ (item) -> Bool in
             return item.id != tweet.id
-        })
-        
-        func removeAll(){
-            return self.tweetContainer.removeAll()
-        }
-        
-        func getTweetAt(index: Int) -> Tweet{
-            return self.tweetContainer[index]
-        }
-        
-        func count() -> Int {
-            return self.tweetContainer.count
         }
     }
+    
+    func removeAll(){
+        self.allTweets.removeAll()
+    }
+    
+    func getTweetAt(index: Int) -> Tweet{
+        return self.allTweets[index]
+    }
+    
+    func count() -> Int{
+        return self.allTweets.count
+    }
+    
 }
