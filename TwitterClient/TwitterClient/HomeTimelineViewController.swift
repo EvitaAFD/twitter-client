@@ -30,17 +30,46 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "My Timeline"
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         
         updateTimeline()
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    func updateTimeline() {
+        super.prepare(for: segue , sender: sender)
+        
+        if segue.identifier == "showDetailSegue" {
+            if let selectedIndex =
+                self.tableView.indexPathForSelectedRow?.row{
+                     let selectedTweet = self.dataSource[selectedIndex]
+                
+                    guard let destinationController = segue.destination as?
+                        TweetDetailViewController else { return }
+                
+                destinationController.tweet = selectedTweet
+                
+            }
+        
+        }
+        
+        
+    }
+        func updateTimeline() {
+            
+        self.activityIndicator.startAnimating()
+            
         API.shared.getTweets { (tweets) in
             OperationQueue.main.addOperation {
+                
                 self.dataSource = tweets ?? []
+                self.activityIndicator.stopAnimating()
             }
             
         }

@@ -18,6 +18,8 @@
 		5029B6A01E806D6400A4BCA0 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029B69F1E806D6400A4BCA0 /* JSONParser.swift */; };
 		5029B6A21E80781700A4BCA0 /* HomeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5029B6A11E80781700A4BCA0 /* HomeTimelineViewController.swift */; };
 		5052155B1E819E9D001A74D9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052155A1E819E9D001A74D9 /* API.swift */; };
+		50FA814D1E847B2A00B8827B /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA814C1E847B2A00B8827B /* TweetDetailViewController.swift */; };
+		50FA814F1E8482C300B8827B /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA814E1E8482C300B8827B /* UserDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		5029B69F1E806D6400A4BCA0 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		5029B6A11E80781700A4BCA0 /* HomeTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTimelineViewController.swift; path = TwitterClient/HomeTimelineViewController.swift; sourceTree = "<group>"; };
 		5052155A1E819E9D001A74D9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		50FA814C1E847B2A00B8827B /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
+		50FA814E1E8482C300B8827B /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				5029B6991E8052B000A4BCA0 /* tweet.json */,
-				5029B6A31E80895F00A4BCA0 /* model */,
-				5029B6A41E80896D00A4BCA0 /* view */,
-				5029B6A51E80898E00A4BCA0 /* controller */,
 				5029B6861E803F5500A4BCA0 /* TwitterClient */,
 				5029B6851E803F5500A4BCA0 /* Products */,
 			);
@@ -70,6 +71,9 @@
 		5029B6861E803F5500A4BCA0 /* TwitterClient */ = {
 			isa = PBXGroup;
 			children = (
+				5029B6A31E80895F00A4BCA0 /* model */,
+				5029B6A41E80896D00A4BCA0 /* view */,
+				5029B6A51E80898E00A4BCA0 /* controller */,
 				5029B6871E803F5500A4BCA0 /* AppDelegate.swift */,
 				5029B68E1E803F5500A4BCA0 /* Assets.xcassets */,
 				5029B6901E803F5500A4BCA0 /* LaunchScreen.storyboard */,
@@ -88,6 +92,7 @@
 				5052155A1E819E9D001A74D9 /* API.swift */,
 			);
 			name = model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5029B6A41E80896D00A4BCA0 /* view */ = {
@@ -96,14 +101,18 @@
 				5029B68B1E803F5500A4BCA0 /* Main.storyboard */,
 			);
 			name = view;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5029B6A51E80898E00A4BCA0 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				50FA814C1E847B2A00B8827B /* TweetDetailViewController.swift */,
 				5029B6A11E80781700A4BCA0 /* HomeTimelineViewController.swift */,
+				50FA814E1E8482C300B8827B /* UserDetailViewController.swift */,
 			);
 			name = controller;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +190,11 @@
 			files = (
 				5029B69E1E80540F00A4BCA0 /* User.swift in Sources */,
 				5029B6A01E806D6400A4BCA0 /* JSONParser.swift in Sources */,
+				50FA814F1E8482C300B8827B /* UserDetailViewController.swift in Sources */,
 				5029B69C1E8053F000A4BCA0 /* Tweet.swift in Sources */,
 				5029B6881E803F5500A4BCA0 /* AppDelegate.swift in Sources */,
 				5027C5A41E808EDB00C9DB90 /* ListOfTweets.swift in Sources */,
+				50FA814D1E847B2A00B8827B /* TweetDetailViewController.swift in Sources */,
 				5029B6A21E80781700A4BCA0 /* HomeTimelineViewController.swift in Sources */,
 				5052155B1E819E9D001A74D9 /* API.swift in Sources */,
 			);
