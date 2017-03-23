@@ -30,18 +30,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="otu-Rp-mXy" id="A3O-at-hRq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ung-zS-YXr">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0uT-WG-qAd">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -75,12 +75,38 @@
                     <view key="view" contentMode="scaleToFill" id="loT-bD-Ite">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DetailText" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-iN-AXb">
+                                <rect key="frame" x="8" y="28" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppt-vl-Mw3">
+                                <rect key="frame" x="8" y="56.5" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HHk-iN-AXb" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" constant="8" id="7z8-SQ-NEI"/>
+                            <constraint firstItem="HHk-iN-AXb" firstAttribute="top" secondItem="wFu-Co-wF0" secondAttribute="bottom" constant="8" id="Ieh-aJ-x7e"/>
+                            <constraint firstAttribute="trailing" secondItem="ppt-vl-Mw3" secondAttribute="trailing" constant="8" id="YyN-0e-QoZ"/>
+                            <constraint firstAttribute="trailing" secondItem="HHk-iN-AXb" secondAttribute="trailing" constant="8" id="aCv-SS-wOM"/>
+                            <constraint firstItem="ppt-vl-Mw3" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" constant="8" id="sfD-Fn-yZr"/>
+                            <constraint firstItem="ppt-vl-Mw3" firstAttribute="top" secondItem="HHk-iN-AXb" secondAttribute="bottom" constant="8" id="xoG-f3-9hk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="detailText" destination="HHk-iN-AXb" id="rpD-KE-Ftg"/>
+                        <outlet property="userText" destination="ppt-vl-Mw3" id="dl9-Vd-y8E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roQ-b3-JxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="-112"/>
+            <point key="canvasLocation" x="700" y="-112.89355322338831"/>
         </scene>
     </scenes>
 </document>

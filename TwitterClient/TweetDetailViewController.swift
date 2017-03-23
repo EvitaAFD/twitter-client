@@ -12,11 +12,20 @@ class TweetDetailViewController: UIViewController {
 
     var tweet: Tweet!
     
+    @IBOutlet weak var detailText: UILabel!
+    @IBOutlet weak var userText: UILabel!
+    @IBOutlet weak var isRetweet: UILabel!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        print(tweet.user?.name ?? "Unknown User")
-        print(tweet.text)
+        self.detailText.text = tweet.text
+        self.userText.text = tweet.user?.name
+        if (tweet.retweet_status == true) {
+            self.isRetweet.text = "This is a Retweet."
+        } else {
+            self.isRetweet.text = "Not a Retweet."
+        }
     }
 }
