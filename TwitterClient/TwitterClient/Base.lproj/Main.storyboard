@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="-69.715142428785612"/>
         </scene>
-        <!--Tweet Detail View Controller-->
+        <!--More About Tweet-->
         <scene sceneID="Oag-0K-aee">
             <objects>
                 <viewController id="QhI-hb-ij8" customClass="TweetDetailViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +98,13 @@
                             <constraint firstItem="P9r-Nn-YD9" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" id="i8G-g7-aiv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="More About Tweet" id="yL5-5g-6Xc">
+                        <barButtonItem key="rightBarButtonItem" title="User Timeline" id="L9w-SW-bu8">
+                            <connections>
+                                <segue destination="HkR-yt-tLo" kind="show" id="qGg-PN-Jm6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tweetDetailTableView" destination="P9r-Nn-YD9" id="scp-bK-09C"/>
                     </connections>
@@ -105,6 +112,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roQ-b3-JxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1511.2" y="-107.49625187406298"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xea-Vq-Bm0">
+            <objects>
+                <viewController id="HkR-yt-tLo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="id1-Gb-IG5"/>
+                        <viewControllerLayoutGuide type="bottom" id="PSb-Xj-DiQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TK5-dn-avY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTy-wy-Wdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="-133"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="jJn-A3-fqp">

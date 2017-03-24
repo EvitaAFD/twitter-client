@@ -67,10 +67,7 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         }
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
 
-    
     func updateTimeline() {
         
         self.activityIndicator.startAnimating()
