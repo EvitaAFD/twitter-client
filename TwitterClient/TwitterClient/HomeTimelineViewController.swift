@@ -28,15 +28,18 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.navigationItem.title = "My Timeline"
+
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
+
         let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
         
         self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
         
+
         
         updateTimeline()
         
@@ -64,19 +67,24 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
+
     
     func updateTimeline() {
         
         self.activityIndicator.startAnimating()
         
+
         API.shared.getTweets { (tweets) in
             guard let tweets = tweets else { fatalError("Tweets came back nil.") }
             
             
             OperationQueue.main.addOperation {
                 
+
                 self.dataSource = tweets
+
                 self.activityIndicator.stopAnimating()
             }
             
