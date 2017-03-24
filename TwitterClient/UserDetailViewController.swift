@@ -10,18 +10,34 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
+
+    var user : User!
+    
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var screenName: UILabel!
+    @IBOutlet weak var userLocation: UILabel!
+    @IBOutlet weak var userDescription: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        getUser()
     }
     
-
-
+    func getUser() {
+        
+        API.shared.getOAuthUser { (userB) in
+            guard let aUser = userB else {fatalError("Oh noooooooo error!")}
+            OperationQueue.main.addOperation {
+                self.user = aUser
+                self.userName.text = "User Name: \(self.user.name)"
+                self.screenName.text = "Screen Name: @\(self.user.screenName)"
+                self.userLocation.text = "Location: \(self.user.location)"
+                self.userDescription.text = "Description: \(self.user.profileDescription)"
+            }
+        }
+    }
 
 }
