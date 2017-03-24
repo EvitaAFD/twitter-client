@@ -8,23 +8,34 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController {
+class TweetDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var tweet: Tweet!
     
-    @IBOutlet weak var detailText: UILabel!
-    @IBOutlet weak var userText: UILabel!
-    @IBOutlet weak var isRetweet: UILabel!
+    @IBOutlet weak var tweetDetailTableView: UITableView!
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
-        self.detailText.text = tweet.text
-        self.userText.text = tweet.user?.name
-        if (tweet.retweet_status == true) {
-            self.isRetweet.text = "This is a Retweet."
-        } else {
-            self.isRetweet.text = "Not a Retweet."
-        }
+        self.tweetDetailTableView.dataSource = self
+        self.tweetDetailTableView.delegate = self
+        self.tweetDetailTableView.estimatedRowHeight = 50
+        self.tweetDetailTableView.rowHeight = UITableViewAutomaticDimension
+        
+        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
+        
+        self.tweetDetailTableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tweetCell = tweetDetailTableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        
+            tweetCell.tweet = self.tweet
+        
+            return tweetCell
     }
 }

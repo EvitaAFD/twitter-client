@@ -41,32 +41,6 @@
                                         <constraint firstAttribute="trailing" secondItem="R1N-R4-xu0" secondAttribute="trailing" id="Lli-Bx-Fc7"/>
                                     </constraints>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Ung-zS-YXr" detailTextLabel="0uT-WG-qAd" style="IBUITableViewCellStyleSubtitle" id="otu-Rp-mXy">
-                                        <rect key="frame" x="0.0" y="164" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="otu-Rp-mXy" id="A3O-at-hRq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ung-zS-YXr">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0uT-WG-qAd">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4M7-oo-9YC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -97,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="818" y="-69"/>
+            <point key="canvasLocation" x="816.79999999999995" y="-69.715142428785612"/>
         </scene>
         <!--Tweet Detail View Controller-->
         <scene sceneID="Oag-0K-aee">
@@ -111,46 +85,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DetailText" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-iN-AXb">
-                                <rect key="frame" x="8" y="72" width="359" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppt-vl-Mw3">
-                                <rect key="frame" x="8" y="100.5" width="359" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IsRetweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6M-Kv-iin">
-                                <rect key="frame" x="8" y="626" width="75.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P9r-Nn-YD9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T6M-Kv-iin" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" constant="8" id="4NV-7k-aOC"/>
-                            <constraint firstItem="HHk-iN-AXb" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" constant="8" id="7z8-SQ-NEI"/>
-                            <constraint firstItem="HHk-iN-AXb" firstAttribute="top" secondItem="wFu-Co-wF0" secondAttribute="bottom" constant="8" id="Ieh-aJ-x7e"/>
-                            <constraint firstItem="ZBo-hE-gh0" firstAttribute="top" secondItem="T6M-Kv-iin" secondAttribute="bottom" constant="20" id="Uwe-vA-sH9"/>
-                            <constraint firstAttribute="trailing" secondItem="ppt-vl-Mw3" secondAttribute="trailing" constant="8" id="YyN-0e-QoZ"/>
-                            <constraint firstAttribute="trailing" secondItem="HHk-iN-AXb" secondAttribute="trailing" constant="8" id="aCv-SS-wOM"/>
-                            <constraint firstItem="ppt-vl-Mw3" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" constant="8" id="sfD-Fn-yZr"/>
-                            <constraint firstItem="ppt-vl-Mw3" firstAttribute="top" secondItem="HHk-iN-AXb" secondAttribute="bottom" constant="8" id="xoG-f3-9hk"/>
+                            <constraint firstAttribute="trailing" secondItem="P9r-Nn-YD9" secondAttribute="trailing" id="3ST-sC-751"/>
+                            <constraint firstItem="ZBo-hE-gh0" firstAttribute="top" secondItem="P9r-Nn-YD9" secondAttribute="bottom" id="OZH-Fh-KGH"/>
+                            <constraint firstItem="P9r-Nn-YD9" firstAttribute="top" secondItem="loT-bD-Ite" secondAttribute="top" id="Qes-A1-wvI"/>
+                            <constraint firstItem="P9r-Nn-YD9" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" id="i8G-g7-aiv"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailText" destination="HHk-iN-AXb" id="7uw-Ae-X3O"/>
-                        <outlet property="isRetweet" destination="T6M-Kv-iin" id="FZm-8f-27q"/>
-                        <outlet property="userText" destination="ppt-vl-Mw3" id="Ogm-Zh-I6k"/>
+                        <outlet property="tweetDetailTableView" destination="P9r-Nn-YD9" id="scp-bK-09C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roQ-b3-JxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639.2" y="-112.89355322338831"/>
+            <point key="canvasLocation" x="1511.2" y="-107.49625187406298"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="jJn-A3-fqp">
