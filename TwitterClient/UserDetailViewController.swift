@@ -10,6 +10,7 @@ import UIKit
 
 class UserDetailViewController: UIViewController {
 
+
     var user : User!
     
     @IBOutlet weak var userName: UILabel!
@@ -38,4 +39,5 @@ class UserDetailViewController: UIViewController {
             }
         }
     }
+
 }
