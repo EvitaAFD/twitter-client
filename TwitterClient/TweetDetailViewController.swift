@@ -15,7 +15,6 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet weak var detailText: UILabel!
     @IBOutlet weak var userText: UILabel!
     @IBOutlet weak var isRetweet: UILabel!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()

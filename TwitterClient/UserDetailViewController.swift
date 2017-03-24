@@ -17,6 +17,8 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var userLocation: UILabel!
     @IBOutlet weak var userDescription: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +28,7 @@ class UserDetailViewController: UIViewController {
     func getUser() {
         
         API.shared.getOAuthUser { (userB) in
-            guard let aUser = userB else {fatalError("This shit is bananas")}
+            guard let aUser = userB else {fatalError("Oh noooooooo error!")}
             OperationQueue.main.addOperation {
                 self.user = aUser
                 self.userName.text = "User Name: \(self.user.name)"

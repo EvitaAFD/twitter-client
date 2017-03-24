@@ -6,13 +6,6 @@
 //  Copyright © 2017 Eve Denison. All rights reserved.
 //
 
-//Setup your cells with Auto Layout
-//Create a 2nd UIViewController that shows an individual tweet in detail
-//omment out the tableView(_:, didSelectRowAt:) delegate method in your HomeTimelineViewController.
-//Upon clicking a tweet, your interface should push to another UIViewController that displays the tweet's details, via a storyboard segue, using labels to present the tweet details to the user instead of print() statements. Also, a few other caveats:
-//If the tweet that was selected is a retweet, you should let the user know in some way.
-//This information is available in the JSON, so you have to go digging for it and add a property to your Tweet class. HINT: This information should be in the tweet.json testing file as well to inspect.
-//Create a ProfileViewController that when presented, shows the logged in user's profile information. Utilize the NavigationBar to add a button to present this new viewController. This can be achieved using the getOAuthUser method we wrote yesterday to get the current user's information.
 
 import UIKit
 
@@ -24,32 +17,67 @@ class HomeTimelineViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    var userProfile : User?
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var timelineImage: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "My Timeline"
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
         
         self.tableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
         
-        self.tableView.estimatedRowHeight = 50
-        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         updateTimeline()
+        
+        self.timelineImage.image = #imageLiteral(resourceName: "pupcake_2")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue , sender: sender)
+        
+        switch segue.identifier {
+        case TweetDetailViewController.identifier?:
+            if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
+                let selectedTweet = self.dataSource[selectedIndex]
+                
+                guard let destinationController = segue.destination as? TweetDetailViewController else { return }
+                
+                destinationController.tweet = selectedTweet
+                
+            }
+        case "userDetailSegue"?:
+            guard segue.destination is UserDetailViewController else { return }
+        default:
+            return
+        }
         
     }
     
     
-    
     func updateTimeline() {
+        
+        self.activityIndicator.startAnimating()
+        
         API.shared.getTweets { (tweets) in
+            guard let tweets = tweets else { fatalError("Tweets came back nil.") }
+            
+            
             OperationQueue.main.addOperation {
-                self.dataSource = tweets ?? []
+                
+                self.dataSource = tweets
+                self.activityIndicator.stopAnimating()
             }
             
         }

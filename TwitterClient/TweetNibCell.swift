@@ -11,9 +11,7 @@ import UIKit
 class TweetNibCell: UITableViewCell {
 
     @IBOutlet weak var userImageView: UIImageView!
-    
     @IBOutlet weak var usernameLabel: UILabel!
-    
     @IBOutlet weak var tweetLabel: UILabel!
     
     var tweet: Tweet! {
