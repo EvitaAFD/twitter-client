@@ -101,7 +101,7 @@
                     <navigationItem key="navigationItem" title="More About Tweet" id="yL5-5g-6Xc">
                         <barButtonItem key="rightBarButtonItem" title="User Timeline" id="L9w-SW-bu8">
                             <connections>
-                                <segue destination="HkR-yt-tLo" kind="show" id="qGg-PN-Jm6"/>
+                                <segue destination="HkR-yt-tLo" kind="show" identifier="UserTimeline" id="qGg-PN-Jm6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
