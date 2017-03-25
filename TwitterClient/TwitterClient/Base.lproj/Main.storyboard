@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="1511.2" y="-107.49625187406298"/>
         </scene>
-        <!--View Controller-->
+        <!--User Timeline View Controller-->
         <scene sceneID="xea-Vq-Bm0">
             <objects>
-                <viewController id="HkR-yt-tLo" sceneMemberID="viewController">
+                <viewController id="HkR-yt-tLo" customClass="UserTimelineViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="id1-Gb-IG5"/>
                         <viewControllerLayoutGuide type="bottom" id="PSb-Xj-DiQ"/>
@@ -124,12 +124,44 @@
                     <view key="view" contentMode="scaleToFill" id="TK5-dn-avY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8gr-Ry-35w">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="SFs-Mm-4Tc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDv-2Q-bYC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="VDv-2Q-bYC" firstAttribute="leading" secondItem="SFs-Mm-4Tc" secondAttribute="leading" id="9l2-6X-Dzp"/>
+                                        <constraint firstAttribute="trailing" secondItem="VDv-2Q-bYC" secondAttribute="trailing" id="LN4-Uw-JMa"/>
+                                        <constraint firstAttribute="bottom" secondItem="VDv-2Q-bYC" secondAttribute="bottom" id="ek9-Hl-2Vn"/>
+                                        <constraint firstItem="VDv-2Q-bYC" firstAttribute="top" secondItem="SFs-Mm-4Tc" secondAttribute="top" id="lJQ-09-cqs"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8gr-Ry-35w" secondAttribute="trailing" id="FaU-rL-Pvo"/>
+                            <constraint firstItem="8gr-Ry-35w" firstAttribute="leading" secondItem="TK5-dn-avY" secondAttribute="leading" id="vwe-he-U2x"/>
+                            <constraint firstItem="PSb-Xj-DiQ" firstAttribute="top" secondItem="8gr-Ry-35w" secondAttribute="bottom" id="yN2-af-FqM"/>
+                            <constraint firstItem="8gr-Ry-35w" firstAttribute="top" secondItem="TK5-dn-avY" secondAttribute="top" id="yRJ-Lz-L3h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userImageView" destination="VDv-2Q-bYC" id="N9I-o1-Aot"/>
+                        <outlet property="userTableView" destination="8gr-Ry-35w" id="whb-OS-sQ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTy-wy-Wdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="-133"/>
+            <point key="canvasLocation" x="2240.8000000000002" y="-133.5832083958021"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="jJn-A3-fqp">

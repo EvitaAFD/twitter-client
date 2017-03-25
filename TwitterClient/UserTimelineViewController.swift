@@ -8,16 +8,29 @@
 
 import UIKit
 
-class UserTimelineViewController: UIViewController {
+class UserTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var dataSource = [Tweet]() {
+        didSet {
+            self.userTableView.reloadData()
+        }
+    }
+    
     var user : User!
+    
+    @IBOutlet weak var userTableView: UITableView!
+    @IBOutlet weak var userImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.userTableView.dataSource = self
+        self.userTableView.delegate = self
 
        getUser()
     }
-    
+
     func getUser() {
         
         API.shared.getOAuthUser { (userB) in
@@ -28,4 +41,35 @@ class UserTimelineViewController: UIViewController {
         }
     }
 
+    func updateUserTimeline() {
+        
+        
+        API.shared.getTweets { (tweets) in
+            guard let tweets = tweets else { fatalError("Tweets came back nil.") }
+            
+            
+            OperationQueue.main.addOperation {
+                
+                self.dataSource = tweets
+                
+                }
+            
+            }
+        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
+        
+        let tweet = self.dataSource[indexPath.row]
+        
+        cell.tweet = tweet
+        
+        return cell
+    }
+        
+        
 }
