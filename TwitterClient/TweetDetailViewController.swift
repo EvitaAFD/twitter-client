@@ -26,6 +26,14 @@ class TweetDetailViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.tweetDetailTableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == UserTimelineViewController.identifier {
+            guard let destinationController = segue.destination as? UserTimelineViewController else { fatalError("Oh nooooooo usertimeline error")}
+            destinationController.userProfile = self.tweet.user
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

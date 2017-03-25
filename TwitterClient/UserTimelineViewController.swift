@@ -17,6 +17,7 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     var user : User!
+    var userProfile: User!
     
     @IBOutlet weak var userTableView: UITableView!
     @IBOutlet weak var userImageView: UIImageView!
@@ -39,9 +40,10 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
         getUser()
         updateUserTimeline()
     }
-
+    
+    
     func getUser() {
-        print("garbage")
+    
         API.shared.getOAuthUser { (userB) in
             guard let aUser = userB else {fatalError("Oh noooooooo error!")}
             OperationQueue.main.addOperation {
@@ -59,7 +61,7 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
             
             
             OperationQueue.main.addOperation {
-                print("more garbage potatoes")
+              
                 self.dataSource = tweets
                 
                 }
