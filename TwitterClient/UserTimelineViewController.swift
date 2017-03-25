@@ -27,16 +27,26 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
         
         self.userTableView.dataSource = self
         self.userTableView.delegate = self
+        self.userTableView.estimatedRowHeight = 50
+        self.userTableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        let userTweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
+        
+        self.userTableView.register(userTweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
+        
 
-       getUser()
+        getUser()
+        updateUserTimeline()
     }
 
     func getUser() {
-        
+        print("garbage")
         API.shared.getOAuthUser { (userB) in
             guard let aUser = userB else {fatalError("Oh noooooooo error!")}
             OperationQueue.main.addOperation {
                 self.user = aUser
+                
             }
         }
     }
@@ -49,7 +59,7 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
             
             
             OperationQueue.main.addOperation {
-                
+                print("more garbage potatoes")
                 self.dataSource = tweets
                 
                 }
