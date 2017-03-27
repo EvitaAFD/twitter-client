@@ -21,10 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-JY-kbZ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-JY-kbZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="66m-xv-YDx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -44,19 +43,24 @@
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4M7-oo-9YC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4M7-oo-9YC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0cU-Yi-1Im"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Sd-JY-kbZ" secondAttribute="bottom" id="LcV-ew-5zL"/>
+                            <constraint firstItem="9Sd-JY-kbZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V1y-w4-w8k"/>
                             <constraint firstItem="4M7-oo-9YC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aZz-hF-c9r"/>
+                            <constraint firstAttribute="trailing" secondItem="9Sd-JY-kbZ" secondAttribute="trailing" id="mmo-yZ-3oI"/>
+                            <constraint firstItem="9Sd-JY-kbZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oA9-2d-elF"/>
                             <constraint firstAttribute="trailing" secondItem="4M7-oo-9YC" secondAttribute="trailing" id="skL-3j-Y0w"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4M7-oo-9YC" secondAttribute="bottom" id="ziP-CA-igS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TRo-g1-vdX">
                         <barButtonItem key="rightBarButtonItem" title="Account" id="ANI-jm-Tg5">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="YPF-Y6-8rF" kind="show" id="5z4-Gy-dhl"/>
                             </connections>
@@ -73,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="-69.715142428785612"/>
         </scene>
-        <!--More About Tweet-->
+        <!--Tweet Deets-->
         <scene sceneID="Oag-0K-aee">
             <objects>
                 <viewController id="QhI-hb-ij8" customClass="TweetDetailViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,7 +91,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P9r-Nn-YD9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,8 +102,9 @@
                             <constraint firstItem="P9r-Nn-YD9" firstAttribute="leading" secondItem="loT-bD-Ite" secondAttribute="leading" id="i8G-g7-aiv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="More About Tweet" id="yL5-5g-6Xc">
+                    <navigationItem key="navigationItem" title="Tweet Deets" id="yL5-5g-6Xc">
                         <barButtonItem key="rightBarButtonItem" title="User Timeline" id="L9w-SW-bu8">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="HkR-yt-tLo" kind="show" identifier="UserTimeline" id="qGg-PN-Jm6"/>
                             </connections>
@@ -178,29 +183,29 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-9V-oaE">
                                 <rect key="frame" x="8" y="72" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKA-bR-hvx">
                                 <rect key="frame" x="8" y="101" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxb-hE-Y8C">
                                 <rect key="frame" x="8" y="130" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cax-Ua-925">
                                 <rect key="frame" x="8" y="159" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wYY-9V-oaE" firstAttribute="top" secondItem="JXY-8J-DpP" secondAttribute="bottom" constant="8" id="6V1-nG-7On"/>
                             <constraint firstItem="oKA-bR-hvx" firstAttribute="leading" secondItem="xCm-pH-zQS" secondAttribute="leading" constant="8" id="9C3-dQ-Ucr"/>
