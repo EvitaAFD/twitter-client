@@ -29,7 +29,6 @@ class TweetDetailViewController: UIViewController {
         if segue.identifier == UserTimelineViewController.identifier {
             guard let destinationController = segue.destination as? UserTimelineViewController else { fatalError("Oh nooooooo usertimeline error")}
                 destinationController.user = self.tweet.user
-                print(self.tweet.user?.screenName)
         }
         
     }
