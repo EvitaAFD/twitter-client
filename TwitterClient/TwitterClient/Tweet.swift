@@ -20,10 +20,10 @@ class Tweet {
     init?(json: [String: Any]) {
         if let _ = json["retweeted_status"] as? [String: Any?] {
             self.retweet_status = true
-            print("True")
+//            print("True")
         } else {
             self.retweet_status = false
-            print("False")
+//            print("False")
         }
         if let text = json["text"] as? String, let id = json["id_str"] as? String, let retweet_count = json["retweet_count"] as? Int {
             self.text = text

@@ -8,43 +8,31 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetDetailViewController: UIViewController {
 
     var tweet: Tweet!
     
-    @IBOutlet weak var tweetDetailTableView: UITableView!
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var retweetLabel: UILabel!
+    @IBOutlet weak var retweetSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userLabel.text = self.tweet.user?.screenName
+        self.tweetLabel.text = self.tweet.text
+        self.retweetSwitch.setOn(self.tweet.retweet_status, animated: true)
         
-        self.tweetDetailTableView.dataSource = self
-        self.tweetDetailTableView.delegate = self
-        self.tweetDetailTableView.estimatedRowHeight = 50
-        self.tweetDetailTableView.rowHeight = UITableViewAutomaticDimension
-        
-        let tweetNib = UINib(nibName: "TweetNibCell", bundle: nil)
-        
-        self.tweetDetailTableView.register(tweetNib, forCellReuseIdentifier: TweetNibCell.identifier)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == UserTimelineViewController.identifier {
             guard let destinationController = segue.destination as? UserTimelineViewController else { fatalError("Oh nooooooo usertimeline error")}
-            destinationController.userProfile = self.tweet.user
+                destinationController.user = self.tweet.user
+                print(self.tweet.user?.screenName)
         }
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tweetCell = tweetDetailTableView.dequeueReusableCell(withIdentifier: TweetNibCell.identifier, for: indexPath) as! TweetNibCell
-        
-            tweetCell.tweet = self.tweet
-        
-            return tweetCell
-    }
 }
 
