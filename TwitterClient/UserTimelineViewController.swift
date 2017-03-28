@@ -56,18 +56,19 @@ class UserTimelineViewController: UIViewController, UITableViewDataSource, UITab
     func updateUserTimeline() {
         
         
-        API.shared.getTweets { (tweets) in
+        API.shared.getTweetsFor(user.screenName, callback: { (tweets) in
             guard let tweets = tweets else { fatalError("Tweets came back nil.") }
             
             
             OperationQueue.main.addOperation {
               
                 self.dataSource = tweets
-                
-                }
-            
             }
-        }
+            
+        })
+    
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
